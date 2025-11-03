@@ -1,0 +1,32 @@
+{
+  "tests": [
+    {
+      "name": "Send message",
+      "method": "POST",
+      "headers": {
+        "X-User-Id": "1"
+      },
+      "body": {
+        "content": "Test message",
+        "channelId": "1"
+      },
+      "expectedStatus": 200,
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get messages",
+      "method": "GET",
+      "headers": {
+        "X-User-Id": "1"
+      },
+      "queryStringParameters": {
+        "channelId": "1"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "messages": "array"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

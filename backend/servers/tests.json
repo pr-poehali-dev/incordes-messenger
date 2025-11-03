@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "name": "Create server",
+      "method": "POST",
+      "headers": {
+        "X-User-Id": "1"
+      },
+      "body": {
+        "action": "createServer",
+        "name": "Test Server"
+      },
+      "expectedStatus": 200,
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get servers list",
+      "method": "GET",
+      "headers": {
+        "X-User-Id": "1"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "servers": "array"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

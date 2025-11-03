@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "name": "Add friend request",
+      "method": "POST",
+      "headers": {
+        "X-User-Id": "1"
+      },
+      "body": {
+        "action": "add",
+        "incordesId": "INCRD-TEST-1234"
+      },
+      "expectedStatus": 200,
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get friends list",
+      "method": "GET",
+      "headers": {
+        "X-User-Id": "1"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "friends": "array"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
